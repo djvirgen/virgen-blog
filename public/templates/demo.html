@@ -1,0 +1,23 @@
+<div>
+  <ul class="nav nav-tabs">
+    <li ng-repeat="file in files" ng-class="{ active: isShown(file) }">
+      <a ng-click="show(file)">{{ file.name }}</a>
+    </li>
+  </ul>
+  
+  <div ng-repeat="file in files" ng-show="isShown(file)">
+    <div ng-switch on="file.type">
+
+      <!-- HTML -->
+      <div ng-switch-when="html" virgen-compile-unsafe="file.contents"></div>
+
+      <!-- Javascript -->
+      <pre ng-switch-when="js" virgen-coffee-view>{{ file.contents }}</pre>
+
+      <!-- Coffeescript -->
+      <div ng-switch-when="coffee">
+        <div virgen-coffee-compile="file.contents"></div>
+      </div>
+    </div>
+  </div>
+</div>

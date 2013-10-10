@@ -1,0 +1,14 @@
+<div class="comments">
+  <h3>Comments</h3>
+  <ul>
+    <li ng-repeat="comment in comments">
+      <h4>{{ comment.name }}</h4>
+      <div>{{ comment.comment }}</div>
+    </li>
+  </ul>
+  <form ng-submit="postComment()">
+    <div><input type="text" ng-model="comment.name" placeholder="Name" /></div>
+    <div><textarea ng-model="comment.comment" placeholder="Comment"></textarea></div>
+    <button type="submit">Submit</button>
+  </form>
+</div>

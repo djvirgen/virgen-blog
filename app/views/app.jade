@@ -1,16 +1,68 @@
 doctype 5
-html(ng-app="blog")
-  head
+html(lang="en", ng-app="blog")
+  head(ng-controller="HeadController")
     title {{ head.title }}
-    script(type="text/javascript", src="http://code.angularjs.org/1.2.0-rc.2/angular.js")
-    script(type="text/javascript", src="http://code.angularjs.org/1.2.0-rc.2/angular-resource.js")
-    script(type="text/javascript", src="http://code.angularjs.org/1.2.0-rc.2/angular-route.js")
-    script(type="text/javascript", src="http://code.angularjs.org/1.2.0-rc.2/angular-sanitize.js")
+    script(type="text/javascript", src="/js/lib/angular/angular-1.2.0.min.js")
+    script(type="text/javascript", src="/js/lib/angular/angular-resource-1.2.0.min.js")
+    script(type="text/javascript", src="/js/lib/angular/angular-route-1.2.0.min.js")
+    script(type="text/javascript", src="/js/lib/angular/angular-sanitize-1.2.0.min.js")
+    script(type="text/javascript", src="/js/lib/processing/processing-1.4.1.min.js")
+    script(type="text/javascript", src="/js/lib/coffee-script/coffee-script.js")
     script(type="text/javascript", src="/js/app.js")
+    link(href="//fonts.googleapis.com/css?family=Open+Sans:300|Lato:400,700&v2", rel="stylesheet", type="text/css")
+    link(rel="stylesheet", href="/css/lib/font-awesome/font-awesome.min.css")
+    link(rel="stylesheet", href="/css/lib/skeleton/base.css")
+    link(rel="stylesheet", href="/css/lib/skeleton/layout.css")
+    link(rel="stylesheet", href="/css/lib/skeleton/skeleton.css")
+    link(rel="stylesheet", href="/css/main.css")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
   body(ng-cloak)
-    header FPO Header
+    canvas#headersketch(ng-controller="HeaderSketchController", virgen-processing="sketch")
 
-    section#main(ng-view)
+    header
+      .container
+        a(href="/") Virgen Technologies
 
-    footer FPO Footer
+    nav.container.boxed
+      .ten.columns
+        .pages
+          a(href="/")
+            i.fa.fw.fa-home
+            |  Home
+          a(href="/blog")
+            i.fa.fw.fa-comment
+            |  Blog
+          //- a(href="/services") Services
+          a(href="https://github.com/djvirgen")
+            i.fa.fw.fa-github
+            |  Code
+          a(href="http://resume.virgentech.com")
+            i.fa.fw.fa-file-text
+            |  Resume
+          a(href="http://resume.virgentech.com/#contact")
+            i.fa.fw.fa-envelope
+            |  Contact
+
+      .six.columns(ng-controller="UserAuthController")
+        .auth
+          span(ng-if="user.id") Logged in as {{ user.username }}
+          a.action.logout(ng-if="user.id", ng-click="logout()") Logout
+          a.action.login(ng-if="!user.id", href="/login") Login
+
+    section#content.boxed.container
+      .row
+        .twelve.columns
+          .view(ng-view)
+        .four.columns
+          .sidebar(ng-controller="SidebarController")
+            h4 About
+            p Hector Virgen is a Zend Certified Engineer with a background in web development and audio/video production. His latest projects include applications for the education industry and social publishing for real estate professionals.
+
+            h4 Latest Blog Entries
+            ul.latest
+              li(ng-repeat="blog in latest")
+                a(ng-href="{{ blog.url }}") {{ blog.title }}
+
+    footer
+      .container Powered by Virgen Technologies

@@ -1,0 +1,47 @@
+*{outline:none}
+body{font-family:Lato,Arial,sans-serif;background:#f2f2f2;font-size:100%;line-height:1.7}
+canvas#headersketch{position:absolute;width:1000px;height:300px;margin-left:-500px;left:50%}
+header{height:230px;font-family:"Open Sans",Arial,sans-serif;margin-bottom:-32px;-webkit-box-sizing:border-box;-khtml-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;}
+header a{font-size:3.5em;position:absolute;top:120px;left:.25em;z-index:2;text-shadow:0 2px 4px rgba(0,0,0,0.35);}
+header a,header a:visited,header a:hover{color:#fff}
+header a:hover{border:none}
+a{color:#36c;text-decoration:none;}
+a:visited{color:#36c}
+a:hover{color:#4775d1;text-decoration:none}
+h1,h2,h3,h4,h5,h6{font-family:"Open Sans"}
+h1{font-size:2.5em;padding-bottom:10px;border-bottom:1px solid #ddd}
+h2{font-size:1.75em}
+h3{font-size:1.5em}
+h4{font-size:1.25em}
+h5{font-size:1em}
+li{line-height:inherit}
+pre,code{font-family:monospace}
+pre{width:100%;-webkit-box-sizing:border-box;-khtml-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;padding:.5em 1em;border-left:2px solid #99b2e6;overflow:auto;margin-bottom:20px}
+code{padding:.2em;border:1px solid #ddd;background:#f7f7f7;color:#f37}
+footer{margin-top:14px;padding:10px 0;background:#111;color:#eee}
+nav .pages,nav .auth{padding:.5em}
+nav .pages a{margin-right:1em;}
+nav .pages a i{color:#c2d1f0}
+nav .auth{text-align:right;}
+nav .auth .action.logout{margin-left:.5em;padding-left:.5em;border-left:1px solid #ccc}
+#content,.boxed{-webkit-box-shadow:0 5px 10px -5px rgba(0,0,0,0.2);-khtml-box-shadow:0 5px 10px -5px rgba(0,0,0,0.2);-moz-box-shadow:0 5px 10px -5px rgba(0,0,0,0.2);-ms-box-shadow:0 5px 10px -5px rgba(0,0,0,0.2);-o-box-shadow:0 5px 10px -5px rgba(0,0,0,0.2);box-shadow:0 5px 10px -5px rgba(0,0,0,0.2);background:#fff;margin-top:18px;margin-bottom:18px}
+.coffee-script-container{position:relative}
+.coffee-script-toggler{position:absolute;right:1px;top:1px;background:#111;color:#fff;padding:4px 12px;font-weight:bold;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-box-shadow:inset 0 24px 24px -12px rgba(255,255,255,0.5),-1px 1px 3px rgba(0,0,0,0.25);-khtml-box-shadow:inset 0 24px 24px -12px rgba(255,255,255,0.5),-1px 1px 3px rgba(0,0,0,0.25);-moz-box-shadow:inset 0 24px 24px -12px rgba(255,255,255,0.5),-1px 1px 3px rgba(0,0,0,0.25);-ms-box-shadow:inset 0 24px 24px -12px rgba(255,255,255,0.5),-1px 1px 3px rgba(0,0,0,0.25);-o-box-shadow:inset 0 24px 24px -12px rgba(255,255,255,0.5),-1px 1px 3px rgba(0,0,0,0.25);box-shadow:inset 0 24px 24px -12px rgba(255,255,255,0.5),-1px 1px 3px rgba(0,0,0,0.25);border:1px solid #777;border-top:none;border-right:none;border-top-right-radius:3px;border-bottom-left-radius:10px;cursor:pointer;}
+.coffee-script-toggler:hover{background:#222}
+form input[type=text],form input[type=password],form textarea{-webkit-box-sizing:border-box;-khtml-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}
+form textarea{width:100%;height:200px}
+form.blog input[type=text]{width:100%}
+form.blog textarea.description{height:120px;font-family:monospace}
+form.blog textarea.content{height:360px;font-family:monospace}
+ul.actions{list-style-type:none;}
+ul.actions li{display:inline-block;margin-right:1em}
+.blog-published{margin-bottom:1em;font-size:.85em;color:#888}
+section.comments{margin-top:1em;border-top:2px solid #eee;padding-top:1em}
+ul.blogs li.blog{clear:left;overflow:hidden;}
+ul.blogs li.blog .published{text-align:center;display:block;position:relative;border:1px solid #eee;height:5.5em;margin:.5em 0 0;-webkit-box-shadow:0 5px 5px -3px rgba(0,0,0,0.1);-khtml-box-shadow:0 5px 5px -3px rgba(0,0,0,0.1);-moz-box-shadow:0 5px 5px -3px rgba(0,0,0,0.1);-ms-box-shadow:0 5px 5px -3px rgba(0,0,0,0.1);-o-box-shadow:0 5px 5px -3px rgba(0,0,0,0.1);box-shadow:0 5px 5px -3px rgba(0,0,0,0.1);}
+ul.blogs li.blog .published span{display:block;}
+ul.blogs li.blog .published span.month{font-weight:bold;font-size:.85em;background:#f2f2f2}
+ul.blogs li.blog .published span.day{position:absolute;top:.25em;left:0;right:0;font-size:2.5em}
+ul.blogs li.blog .published span.year{position:absolute;bottom:0;left:0;right:0;font-size:.85em}
+.sidebar{border-left:1px solid #eee;padding:1em 0 1em 1em;}
+.sidebar p{font-size:.85em}

@@ -1,0 +1,33 @@
+<h1 ng-if="blog.id">Edit Blog</h1>
+<h1 ng-if="!blog.id">Create Blog</h1>
+
+<form class="blog" ng-submit="save()">
+  <div class="form-group">
+    <label for="blogTitle">Title</label>
+    <input type="text" class="form-control" id="blogTitle" ng-model="blog.title" placeholder="My Awesome Blog Entry">
+  </div>
+
+  <div class="form-group">
+    <label for="blogTitle">Slug</label>
+    <input type="text" class="form-control" id="blogSlug" ng-model="blog.newSlug" placeholder="my-awesome-blog-entry">
+  </div>
+
+  <div class="form-group">
+    <label for="blogTitle">Description</label>
+    <textarea class="form-control description" ng-model="blog.description" placeholder="Description"></textarea>
+    <p class="help-block">
+      This description will appear on the blog list page.
+    </p>
+  </div>
+
+  <div class="form-group">
+    <label for="blogTitle">Content</label>
+    <textarea class="form-control content" ng-model="blog.content" placeholder="Content"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-default">Save</button>
+</form>
+
+<hr />
+<h1>{{ blog.title }}</h1>
+<div virgen-compile-unsafe="blog.content"></div>

@@ -1,0 +1,8 @@
+production:
+  db: "mongodb://localhost/virgentech-dev"
+  auth:
+    username: admin
+    password: changeme
+
+development:
+  _extends: production

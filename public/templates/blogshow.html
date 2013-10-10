@@ -1,2 +1,13 @@
-<h1>{{ blog.title }}</h1>
-<div ng-bind-html="blog.content"></div>
+<div class="blog-entry-container">
+  <h1>{{ blog.title }}</h1>
+  <div class="blog-published">
+    Published {{ blog.published | date }} by Hector Virgen
+  </div>
+  <ul class="actions" ng-if="currentUser.id">
+    <li><a ng-href="/blog/{{ blog.slug }}/edit"><i class="fa fw fa-edit"></i> Edit</a></li>
+    <li><a ng-href="/blog/{{ blog.slug }}/unpublish"><i class="fa fw fa-unlink"></i> Unpublish*</a></li>
+    <li><a ng-href="/blog/{{ blog.slug }}/delete"><i class="fa fw fa-trash-o"></i> Delete*</a></li>
+  </ul>
+  <div class="blog" virgen-compile-unsafe="blog.content"></div>
+  <section class="comments" virgen-disqus shortname="config.disqus.shortname"></section>
+</div>
