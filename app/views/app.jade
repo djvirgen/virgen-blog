@@ -1,0 +1,16 @@
+doctype 5
+html(ng-app="blog")
+  head
+    title {{ head.title }}
+    script(type="text/javascript", src="http://code.angularjs.org/1.2.0-rc.2/angular.js")
+    script(type="text/javascript", src="http://code.angularjs.org/1.2.0-rc.2/angular-resource.js")
+    script(type="text/javascript", src="http://code.angularjs.org/1.2.0-rc.2/angular-route.js")
+    script(type="text/javascript", src="http://code.angularjs.org/1.2.0-rc.2/angular-sanitize.js")
+    script(type="text/javascript", src="/js/app.js")
+
+  body(ng-cloak)
+    header FPO Header
+
+    section#main(ng-view)
+
+    footer FPO Footer
