@@ -100,4 +100,4 @@ app.post '/resource/blog/:slug', (req, res) ->
 
 app.get '*', (req, res) -> res.redirect "/##{req.path}"
 
-app.listen 3000
+app.listen process.env.PORT or 3000
