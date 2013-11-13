@@ -34,8 +34,10 @@ app.get '/', ngApp
 currentUser = null
 
 app.post '/resource/user/login', (req, res) ->
-  if req.body.username is app.config.auth.username and req.body.password is app.config.auth.password
-    currentUser = id: 1, username: app.config.auth.username
+  username = process.env.ADMIN_USERNAME or app.config.auth.username
+  password = process.env.ADMIN_PASSWORD or app.config.auth.password
+  if req.body.username is username and req.body.password is password
+    currentUser = id: 1, username: username
     res.send currentUser
   else
     res.send error: 'bad password', 401
