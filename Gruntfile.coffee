@@ -10,7 +10,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'dbclear', 'Clear Database', () ->
     done = @async()
-    mongoose.connect config.db, (err) ->
+    mongoose.connect process.env.DB or config.db, (err) ->
       return "Error: #{err}" if err
       mongoose.connection.db.collections (err, collections) ->
         count = collections.length
