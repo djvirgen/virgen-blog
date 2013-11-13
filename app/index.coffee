@@ -23,7 +23,7 @@ app.use express.static "#{__dirname}/../public"
 app.config = new (require 'configgles')("#{__dirname}/../config/app.yaml", process.env.NODE_ENV || 'development')
 
 mongoose = require 'mongoose'
-mongoose.connect app.config.db, (err) ->
+mongoose.connect process.env.MONGOLAB_URI or app.config.db, (err) ->
   console.log "DB Connect Error: #{err}" if err?
 
 ngApp = (req, res) -> res.render 'app'
